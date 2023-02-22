@@ -1,0 +1,14 @@
+redis:
+    addr: "localhost:6379"
+    pool_size: 50
+
+worker:
+    concurrency: 1000
+    random_delay: 10
+
+job:
+    queue_count: 50
+    task_per_queue: 500
+    publishers_count: 50
+    default_deadline: 86400
+    error_rate: 0
