@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/GetSimpl/work"
-	"github.com/agniBit/bench-mark/app/config"
-	"github.com/agniBit/bench-mark/model"
+	"github.com/agniBit/benchmark/app/config"
+	"github.com/agniBit/benchmark/model"
 	"github.com/gomodule/redigo/redis"
 	"github.com/hibiken/asynq"
+	"math/rand"
 	"sync"
 )
 
@@ -31,6 +32,8 @@ func PublishTasks(cfg *config.Config, enqueueClient string) {
 		goCraftClient = work.NewEnqueuer("test", redisPool)
 	}
 
+	queuePriority := []model.QueuePriority{model.QueuePriorityCritical, model.QueuePriorityDefault, model.QueuePriorityLow}
+
 	// run 100 go-routines to publish tasks
 	for i := 0; i < cfg.Job.PublisherCount; i++ {
 		wg.Add(1)
@@ -47,9 +50,9 @@ func PublishTasks(cfg *config.Config, enqueueClient string) {
 						fmt.Println("unable to marshal payload", err.Error())
 					}
 					if enqueueClient == "asynq" {
-						_, err = asynqClient.Enqueue(asynq.NewTask(fmt.Sprintf("%s-%d", string(model.DummyJob), j), payload),
-							//asynq.Deadline(time.Now().Local().Add(time.Duration(cfg.Job.DefaultDeadline)*time.Second)),
-							asynq.MaxRetry(3))
+						p := string(queuePriority[rand.Intn(3)])
+						task := asynq.NewTask(fmt.Sprintf("%s-%d", string(model.DummyJob), j), payload, asynq.Queue(p), asynq.MaxRetry(3))
+						_, err = asynqClient.Enqueue(task)
 					} else if enqueueClient == "gocraft" {
 						_, err = goCraftClient.Enqueue(fmt.Sprintf("%s-%d", string(model.DummyJob), j), work.Q{"payload": payload})
 					}

@@ -3,7 +3,7 @@ package task_handler
 import (
 	"context"
 	"fmt"
-	"github.com/agniBit/bench-mark/app/config"
+	"github.com/agniBit/benchmark/app/config"
 	"math/rand"
 	"sync"
 	"time"

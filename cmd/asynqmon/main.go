@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/agniBit/bench-mark/app/config"
+	"github.com/agniBit/benchmark/app/config"
 	"log"
 	"net/http"
 

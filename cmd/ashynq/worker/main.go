@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/agniBit/bench-mark/app/config"
-	asynqworker "github.com/agniBit/bench-mark/asynq/worker"
+	"github.com/agniBit/benchmark/app/config"
+	asynqworker "github.com/agniBit/benchmark/asynq/worker"
 )
 
 func main() {

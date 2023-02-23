@@ -3,8 +3,8 @@ package gocraft_worker
 import (
 	"fmt"
 	"github.com/GetSimpl/work"
-	"github.com/agniBit/bench-mark/app/config"
-	"github.com/agniBit/bench-mark/model"
+	"github.com/agniBit/benchmark/app/config"
+	"github.com/agniBit/benchmark/model"
 	"github.com/gomodule/redigo/redis"
 	"os"
 	"os/signal"

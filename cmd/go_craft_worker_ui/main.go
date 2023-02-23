@@ -9,7 +9,7 @@ import (
 	"github.com/gocraft/work/webui"
 	"github.com/gomodule/redigo/redis"
 
-	"github.com/agniBit/bench-mark/app/config"
+	"github.com/agniBit/benchmark/app/config"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/agniBit/bench-mark
+module github.com/agniBit/benchmark
 
 go 1.18
 

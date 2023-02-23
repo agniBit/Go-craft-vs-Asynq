@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/agniBit/bench-mark/app/config"
-	gocraft_worker "github.com/agniBit/bench-mark/go_craft/worker"
+	"github.com/agniBit/benchmark/app/config"
+	gocraft_worker "github.com/agniBit/benchmark/go_craft/worker"
 )
 
 func main() {

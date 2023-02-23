@@ -5,8 +5,8 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"github.com/GetSimpl/work"
-	"github.com/agniBit/bench-mark/app/task_handler"
-	"github.com/agniBit/bench-mark/model"
+	"github.com/agniBit/benchmark/app/task_handler"
+	"github.com/agniBit/benchmark/model"
 )
 
 type Job struct {

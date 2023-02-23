@@ -2,7 +2,7 @@ package asynq_scheduler
 
 import (
 	"fmt"
-	"github.com/agniBit/bench-mark/model"
+	"github.com/agniBit/benchmark/model"
 	"github.com/hibiken/asynq"
 	"time"
 )

@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/agniBit/bench-mark/app/config"
-	"github.com/agniBit/bench-mark/app/publisher"
+	"github.com/agniBit/benchmark/app/config"
+	"github.com/agniBit/benchmark/app/publisher"
 	"time"
 )
 

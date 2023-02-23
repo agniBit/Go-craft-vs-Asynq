@@ -3,10 +3,10 @@ package asynq_worker
 import (
 	"context"
 	"encoding/json"
-	"github.com/agniBit/bench-mark/app/task_handler"
+	"github.com/agniBit/benchmark/app/task_handler"
 	"github.com/hibiken/asynq"
 
-	"github.com/agniBit/bench-mark/model"
+	"github.com/agniBit/benchmark/model"
 )
 
 func handleFunc(ctx context.Context, t *asynq.Task) error {

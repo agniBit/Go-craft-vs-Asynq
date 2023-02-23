@@ -1,7 +1,7 @@
 package asynq_scheduler
 
 import (
-	"github.com/agniBit/bench-mark/app/config"
+	"github.com/agniBit/benchmark/app/config"
 	"github.com/hibiken/asynq"
 	"log"
 	"os"

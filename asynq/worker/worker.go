@@ -2,12 +2,20 @@ package asynq_worker
 
 import (
 	"fmt"
-	"github.com/agniBit/bench-mark/app/config"
-	"github.com/agniBit/bench-mark/model"
-	"github.com/hibiken/asynq"
 	"log"
 	"time"
+
+	"github.com/hibiken/asynq"
+
+	"github.com/agniBit/benchmark/app/config"
+	"github.com/agniBit/benchmark/model"
 )
+
+var QueuePriorityMap = map[string]int{
+	string(model.QueuePriorityCritical): 6,
+	string(model.QueuePriorityDefault):  3,
+	string(model.QueuePriorityLow):      1,
+}
 
 func StartServer(cfg *config.Config) {
 	t := time.Now()
@@ -18,9 +26,7 @@ func StartServer(cfg *config.Config) {
 		},
 		asynq.Config{
 			Concurrency: cfg.Worker.Concurrency,
-			Queues: map[string]int{
-				"default": 1,
-			},
+			Queues:      QueuePriorityMap,
 		},
 	)
 
