@@ -3,9 +3,9 @@ module github.com/agniBit/benchmark
 go 1.18
 
 require (
-	github.com/GetSimpl/work v1.1.8
+	github.com/GetSimpl/work v1.2.1-alpha
 	github.com/gocraft/work v0.5.1
-	github.com/gomodule/redigo v2.0.0+incompatible
+	github.com/gomodule/redigo v1.8.9
 	github.com/hibiken/asynq v0.24.0
 	github.com/hibiken/asynqmon v0.7.1
 	github.com/spf13/viper v1.15.0
